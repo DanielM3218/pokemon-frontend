@@ -1,54 +1,123 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Pokemon Frontend
 
-Currently, two official plugins are available:
+Frontend application for the Pokémon app built with **React**, **TypeScript**, and **Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+Before running the project, ensure you have the following installed:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. **Node.js (v22.14.0)**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Follow these steps to install and use **Node.js v22.14.0**:
+
+#### Install `nvm` (Node Version Manager)
+
+If you don’t have `nvm` installed, you can install it by running the following command in your terminal:
+
+For **macOS/Linux**:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+For **Windows**, follow the installation guide in the [nvm-windows repository](https://github.com/coreybutler/nvm-windows).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Once `nvm` is installed, restart your terminal or run the following to load `nvm`:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+source ~/.bashrc  # or source ~/.zshrc for zsh users
 ```
+
+#### Install Node.js v22.14.0
+
+After `nvm` is installed, run the following command to install Node version **22.14.0**:
+
+```bash
+nvm install 22.14.0
+```
+
+#### Switch to Node v22.14.0
+
+To make sure you're using **Node v22.14.0**, run:
+
+```bash
+nvm use 22.14.0
+```
+
+#### Verify the Installed Version
+
+Check if the correct version is being used:
+
+```bash
+node -v
+```
+
+It should return:
+
+```
+v22.14.0
+```
+
+#### Set Node v22.14.0 as Default (Optional)
+
+If you want to ensure that **Node v22.14.0** is used by default every time you start a new terminal session, run:
+
+```bash
+nvm alias default 22.14.0
+```
+
+#### Update `.nvmrc` for Project Consistency
+
+To ensure that everyone working on this project uses **Node v22.14.0**, add the version to an `.nvmrc` file:
+
+```bash
+echo "22.14.0" > .nvmrc
+```
+
+This way, anyone working on the project can simply run:
+
+```bash
+nvm use
+```
+
+and `nvm` will automatically switch to the correct Node version.
+
+### 2. **Yarn**
+
+Install Yarn globally if you haven't already:
+
+```bash
+npm install --global yarn
+```
+
+Verify installation:
+
+```bash
+yarn --version
+```
+
+## Setup Instructions
+
+1. **Clone the Repository**
+
+```bash
+git clone https://github.com/DanielM3218/pokemon-frontend.git
+cd pokemon-frontend
+```
+
+2. **Install Dependencies**
+
+```bash
+yarn install
+```
+
+3. **Run the Development Server**
+
+```bash
+yarn dev
+```
+
+This starts the Vite server. Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
+
+---
